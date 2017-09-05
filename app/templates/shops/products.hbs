@@ -1,0 +1,28 @@
+{{outlet}}
+<form class="add-item" onsubmit={{action 'addProduct'}} id='productEditor'>
+  <input type="text" placeholder="Product Name" id="productName" class="product"><br>
+  <input type="number" placeholder="Product QTY" id="productQty" class="product"><br>
+  <input type="number" placeholder="Product Price" id="productPrice" class="product"><br>
+  <button>Add</button>
+</form>
+<div class="content">
+  <ul>
+    <li>
+      <span class="span">Name</span>
+      <span class="span">QTY</span>
+      <span class="span">Price</span>
+    </li>
+    {{#each model.products as |productUnit|}}
+      {{product-listing product=productUnit onEdit=(action 'edit') onDelete=(action 'delete')}}
+    {{/each}}
+    <li>
+      <span class="total-price">
+        <span>Total Price</span>
+        <b class="total-price">${{model.totalPrice}}</b>
+      </span>
+    </li>
+  </ul>
+</div>
+<button onclick={{action 'openEditor'}} class="button">Add Product</button>
+
+

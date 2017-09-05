@@ -1,0 +1,98 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+.add-item {
+  display: none;
+  margin-left: 283px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.add-item.visible {
+  display: inline-block;
+}
+.product {
+  margin-bottom:10px;
+  padding: 5px;
+}
+a {
+  text-decoration: none;
+  color: dimgray;
+}
+
+h1 {
+  text-align: center;
+}
+ul {
+  width: 60%;
+  position: relative;
+  margin: auto;
+}
+li {
+  width:100%;
+  border: 1px solid #888888;
+  padding: 15px;
+  list-style-type: none;
+}
+.button {
+  margin-left: 290px;
+  width: 100px;
+  padding: 10px;
+  border: 0px;
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+  margin-top: 5px;
+}
+.edit-btn {
+  position: absolute;
+  right: 90px;
+  cursor: pointer;
+  width: 70px;
+  background-color: green;
+  border: 0px;
+  color: white;
+  padding: 7px;
+}
+.delete-btn {
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  background-color: red;
+  border: 0px;
+  color: white;
+  padding: 7px;
+}
+.span {
+  width: 30%;
+  display: inline-block;
+}
+.edit-b {
+  position: absolute;
+  right: -75px;
+  cursor: pointer;
+ }
+.delete-b{
+  position: absolute;
+  right: -120px;
+  cursor: pointer;
+}
+.material-icons {
+  user-select: none;
+  vertical-align: middle;
+}
+.total-price {
+  position: absolute;
+  right: 0px;
+
+}
+.total-price {
+  display: inline-block;
+}
+.content ul li:last-child {
+  height: 50px;
+}
+.list-item {
+  color: #888888;
+}
+.shop {
+  margin-bottom: 5px;
+  padding: 10px;
+}

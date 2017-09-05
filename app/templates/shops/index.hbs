@@ -1,0 +1,12 @@
+{{outlet}}
+<h1>Shops</h1>
+<form class="add-item" onsubmit={{action 'add'}} id='shopEditor'>
+  <input type="text" placeholder="Shop Name" id="shopName" class="shop"><br>
+  <button>Add</button>
+</form>
+  <ul>
+    {{#each model as |shop|}}
+      {{shop-listing shop=shop  onEdit=(action 'edit')}}
+    {{/each}}
+  </ul>
+<button  onclick={{action 'openEditor'}} class="button">Add shop</button>

@@ -1,0 +1,18 @@
+<span class="span">
+  {{product.name}}
+</span>
+<span class="span" >
+  {{product.qty}}
+</span>
+<span class="price">
+  <span>$</span>{{product.price}}
+</span>
+
+<span>
+  <button class="edit-b" onclick={{action 'edit'}}>
+    <i class="material-icons">mode_edit</i>
+  </button>
+  <button class="delete-b" onclick={{action 'delete'}}>
+    <i class="material-icons">delete</i>
+  </button>
+</span>

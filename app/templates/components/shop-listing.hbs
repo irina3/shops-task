@@ -1,0 +1,7 @@
+<span class="list-item">
+  {{#link-to "shops.products" shop}}
+    {{shop.name}}
+  {{/link-to}}
+</span>
+<button class="edit-btn" onclick={{action 'edit'}}>EDIT</button>
+<button class="delete-btn" onclick={{action 'removeShop'}}>DELETE</button>
