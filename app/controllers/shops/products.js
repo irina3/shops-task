@@ -63,5 +63,5 @@ export default Ember.Controller.extend({
       products.removeObject(product);
       this.get('shopService').update();
     },
-  }
+  },
 });
