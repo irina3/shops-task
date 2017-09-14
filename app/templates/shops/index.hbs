@@ -5,8 +5,8 @@
   <button>Add</button>
 </form>
   <ul>
-    {{#each model as |shop|}}
-      {{shop-listing shop=shop  onEdit=(action 'edit')}}
+    {{#each model as |shopUnit|}}
+      {{shop-listing shop=shopUnit  onEdit=(action 'edit')}}
     {{/each}}
   </ul>
 <button  onclick={{action 'openEditor'}} class="button">Add shop</button>

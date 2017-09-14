@@ -28,9 +28,9 @@ export default Ember.Controller.extend({
     },
     edit(shop) {
       this.set('shop', shop);
-      const input = document.querySelector('#shopName');
-      input.classList.add('visible');
-      input.value = shop.name;
+      const form = document.querySelector('#shopEditor');
+      form.classList.add('visible');
+
     }
   }
 });
