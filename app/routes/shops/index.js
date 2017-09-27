@@ -1,8 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  shopService: Ember.inject.service(),
-  model() {
-    return this.get('shopService').findAll();
+    model() {
+    return this.store.findAll('shop');
   }
 });

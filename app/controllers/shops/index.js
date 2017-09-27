@@ -1,36 +1,49 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  shopService: Ember.inject.service(),
   shop: {},
   actions: {
     openEditor() {
-      const form = document.querySelector('#shopEditor');
+      const form = document.querySelector('.form');
       form.classList.add('visible');
     },
-    add(e) {
-      const form = document.querySelector('#shopEditor'),
-        name = document.querySelector('#shopName');
-        if(!Ember.isBlank(name.value)) {
-        const service = this.get('shopService');
-        const shop = this.get('shop');
-        this.set('shop.name', name.value.trim());
-        if (!shop.id) {
-          service.add(shop);
-        } else {
-          service.update();
-        }
-        form.classList.remove('visible');
-        name.value = '';
-        this.set('shop', {});
-      }
-      e.preventDefault();
-    },
-    edit(shop) {
-      this.set('shop', shop);
-      const form = document.querySelector('#shopEditor');
-      form.classList.add('visible');
+    saveShop() {
+      const name = this.get('name');
+      if (!name.trim()) { return; }
+      let newShop;
+      newShop = this.store.createRecord('shop', {
+        name: name,
 
+      });
+
+      const form = document.querySelector('.form');
+      form.classList.remove('visible');
+      newShop.save().then(() => {
+        this.set('name', '');
+        this.transitionToRoute('shops')
+      });
+
+    },
+    deleteShop(shop) {
+
+      shop.destroyRecord();
+
+    },
+    editShop(id) {
+      const editForm = document.querySelector('.edit-form');
+      editForm.classList.add('edit-visible');
+      this.store.findRecord('shop', id).then(shop => {
+        this.set('shop', shop);
+        this.set('name', this.get('shop.name'));
+      });
+    },
+    saveShopEdit() {
+      this.set('shop.name', this.get('name'));
+      this.get('shop').save().then(() => {
+        const form = document.querySelector('.edit-form');
+        form.classList.remove('edit-visible');
+      });
+      this.set('name', '');
     }
   }
 });

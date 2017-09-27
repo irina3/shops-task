@@ -1,28 +1,29 @@
 {{outlet}}
-<form class="add-item" onsubmit={{action 'addProduct'}}  id='productEditor'>
-  <input type="text" placeholder="Product Name" id="productName" class="product"><br>
-  <input type="number" placeholder="Product QTY" id="productQty" class="product"><br>
-  <input type="number" placeholder="Product Price" id="productPrice" class="product"><br>
-  <button>Add</button>
-</form>
-<div class="content">
-  <ul>
-    <li>
-      <span class="span">Name</span>
-      <span class="span">QTY</span>
-      <span class="span">Price</span>
-    </li>
-    {{#each model.products as |productUnit|}}
-      {{product-listing product=productUnit onEdit=(action 'edit') onDelete=(action 'delete')}}
-    {{/each}}
-    <li>
-      <span class="total-price">
-        <span>Total Price</span>
-        <b class="total-price">${{model.totalPrice}}</b>
-      </span>
-    </li>
-  </ul>
+<div class="product-form">
+  {{input type="text" placeholder="Product Name"   value=name}}<br>
+  {{input type="number" placeholder="Product QTY" value=qty}}<br>
+  {{input type="number" placeholder="Product Price"value=price}}<br>
+  <button {{action 'saveProduct'}}>Add</button>
 </div>
-<button onclick={{action 'openEditor'}} class="button">Add Product</button>
-
+<div class="edit-form-product">
+  {{input type="text" placeholder="Product Name"   value=name }}<br>
+  {{input type="number" placeholder="Product QTY" value=qty }}<br>
+  {{input type="number" placeholder="Product Price" value=price }}<br>
+  <button {{action 'saveEdit' model}}>Save</button>
+</div>
+<div class="divTable">
+  <div class="headRow">
+    <div class="divCell">Name</div>
+    <div class="divCell">QTY</div>
+    <div  class="divCell">Price</div>
+  </div>
+  {{#each model.products as |product|}}
+    {{product-listing product=product edit=(action 'editProduct')}}
+  {{/each}}
+  <div class="headRow">
+    <div  class="divCell colspan"><span>Total Price</span>
+      <b class="total-price">${{totalPrice}}</b></div>
+  </div>
+</div>
+<button {{action 'openEditor'}} class="add-product">Add Product</button>
 

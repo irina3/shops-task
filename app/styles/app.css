@@ -1,98 +1,148 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
-.add-item {
+.form {
   display: none;
-  margin-left: 283px;
-  padding: 5px;
-  margin-bottom: 5px;
+  left: 200px;
+  position: absolute;
+  top: 30px;
 }
-.add-item.visible {
+.visible {
+  display: block;
+}
+.product-form {
+  margin-top: 30px;
+  display: none;
+  margin-left: 308px;
+}
+.product-visible {
+  display: block;
+}
+.edit-form {
+  display: none;
+  left: 200px;
+  position: absolute;
+  top: 30px;
+}
+.edit-visible {
+  display: block;
+}
+
+.shop-name {
+  position: absolute;
+
+}
+.button-shop {
   display: inline-block;
+  margin-left: 80%;
+  width: 39%;
 }
-.product {
-  margin-bottom:10px;
-  padding: 5px;
+h1 {
+  text-align: center;
+}
+.content {
+  margin: auto;
+  width: 70%;
+  border: 4px dotted grey;
+  padding: 10px;
 }
 a {
   text-decoration: none;
   color: dimgray;
 }
+.shop-content {
+  border-bottom: 1px solid grey;
+  width: 90%;
+  display: inline-block;
+  padding: 5px;
+}
+.add-shop {
+  left: 200px;
+  position: absolute;
+  margin-top:10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bolder;
+}
 
-h1 {
+.divTable {
+  display: table;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 15px;
+}
+.divRow {
+  display:table-row;
+  width:auto;
   text-align: center;
 }
-ul {
-  width: 60%;
-  position: relative;
-  margin: auto;
-}
-li {
-  width:100%;
-  border: 1px solid #888888;
-  padding: 15px;
-  list-style-type: none;
-}
-.button {
-  margin-left: 290px;
-  width: 100px;
-  padding: 10px;
-  border: 0px;
-  cursor: pointer;
-  background-color: gray;
-  color: white;
-  margin-top: 5px;
-}
-.edit-btn {
-  position: absolute;
-  right: 90px;
-  cursor: pointer;
-  width: 70px;
-  background-color: green;
-  border: 0px;
-  color: white;
-  padding: 7px;
-}
-.delete-btn {
-  position: absolute;
-  right: 0px;
-  cursor: pointer;
-  background-color: red;
-  border: 0px;
-  color: white;
-  padding: 7px;
-}
-.span {
-  width: 30%;
-  display: inline-block;
-}
-.edit-b {
-  position: absolute;
-  right: -75px;
-  cursor: pointer;
- }
-.delete-b{
-  position: absolute;
-  right: -120px;
-  cursor: pointer;
-}
-.material-icons {
-  user-select: none;
-  vertical-align: middle;
-}
-.total-price {
-  position: absolute;
-  right: 0px;
 
+.divCell {
+  float:left;
+  display:table-column;
+  width:200px;
+  background-color:#ccc;
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
 }
-.total-price {
-  display: inline-block;
+.colspan {
+  display: table-caption;
+  caption-side: bottom;
+  width: 636px;
+  text-align: right;
 }
-.content ul li:last-child {
-  height: 50px;
-}
-.list-item {
-  color: #888888;
-}
-.shop {
-  margin-bottom: 5px;
+.add-product{
   padding: 10px;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-left: 308px;
+}
+.edit-form-product {
+  margin-left: 308px;
+  display: none;
+}
+.edit-visible-product {
+  display: block;
+}
+.form input {
+  padding: 5px;
+  font-size: 16px;
+}
+.edit-form input {
+  padding: 5px;
+  font-size: 16px;
+}
+.button-shop button:first-child {
+  background-color: darkgreen;
+  color: white;
+  padding: 8px;
+  width: 80px;
+  border: none;
+  cursor: pointer;
+}
+.button-shop button:last-child {
+  background-color: firebrick;
+  color: white;
+  padding: 8px;
+  width: 80px;
+  border: none;
+  cursor: pointer;
+}
+.product-form input {
+  padding: 5px;
+  font-size: 16px;
+}
+.edit-form-product input {
+  padding: 5px;
+  font-size: 16px;
+}
+.product-form button {
+  padding: 5px;
+  width: 50px;
+  font-size: 16px;
+}
+.edit-form-product button {
+  padding: 5px;
+  width: 50px;
+  font-size: 16px;
 }

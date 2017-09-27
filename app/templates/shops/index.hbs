@@ -1,12 +1,22 @@
 {{outlet}}
-<h1>Shops</h1>
-<form class="add-item" onsubmit={{action 'add'}} id='shopEditor'>
-  <input type="text" placeholder="Shop Name" id="shopName" class="shop"><br>
-  <button>Add</button>
-</form>
-  <ul>
-    {{#each model as |shopUnit|}}
-      {{shop-listing shop=shopUnit  onEdit=(action 'edit')}}
-    {{/each}}
-  </ul>
-<button  onclick={{action 'openEditor'}} class="button">Add shop</button>
+<h1>SHOPS</h1>
+
+<div class="form">
+  <p>{{input type="text" placeholder="Shop" value=name action="saveShop"}}</p>
+</div>
+<div class="edit-form">
+  <p>{{input type="text"  value=name  action="saveShopEdit"}}</p>
+</div>
+
+<div class="content">
+  {{#each model as |shop|}}
+    <span class="shop-content">
+    {{shop-listing shop=shop}}
+      <span class="button-shop">
+      <button class="edit-shop" {{action 'editShop' shop.id}}>EDIT</button>
+      <button class="delete-shop"{{action 'deleteShop' shop}}>DELETE</button>
+    </span>
+    </span>
+  {{/each}}
+</div>
+<button class="add-shop" onclick={{action 'openEditor'}}>Add shop</button>

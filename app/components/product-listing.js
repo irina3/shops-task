@@ -1,15 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'li',
-
   actions: {
-    edit() {
-      this.get('onEdit')(this.get('product'));
+    deleteProduct(product) {
+      product.destroyRecord();
     },
-    delete() {
-      this.get('onDelete')(this.get('product'));
+    editProduct(id) {
+      const editForm = document.querySelector('.edit-form-product');
+      editForm.classList.add('edit-visible-product');
+      this.get('edit')(id);
     }
-
   }
 });
